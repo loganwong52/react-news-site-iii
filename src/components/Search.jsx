@@ -18,10 +18,14 @@ function Search({ articles }) {
     }
 
     useEffect(() => {
-        console.log(searchTitle === '')
+
         if (searchTitle !== '') {
+            console.log(searchTitle === '')
+
             const filteredArticles = articles.filter(article => article.title.includes(searchTitle))
             setResults(filteredArticles)
+        } else {
+            setResults([])
         }
 
     }, [searchTitle])
